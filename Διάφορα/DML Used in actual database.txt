@@ -1,0 +1,176 @@
+# Στάνταρ τιμές για τα διαθέσιμα μεγέθη αυτοκινήτων
+# Χωρίς ENUM για να υπάρχει δυνατότητα προσθήκης και άλλων κατηγοριών αν χρειαστεί
+INSERT INTO carsize VALUES(1, 'Μικρό');
+INSERT INTO carsize VALUES(2, 'Μεσαίο');
+INSERT INTO carsize VALUES(3, 'Μεγάλο');
+INSERT INTO carsize VALUES(4, 'Πολύ μεγάλο');
+
+# Στάνταρ τιμές για τους διαθέσιμους τύπους αυτοκινήτων
+# Χωρίς ENUM για να υπάρχει δυνατότητα προσθήκης και άλλων κατηγοριών αν χρειαστεί
+INSERT INTO cartype VALUES(1, 'Βενζινοκίνητο');
+INSERT INTO cartype VALUES(2, 'Πετρελαιοκίνητο');
+INSERT INTO cartype VALUES(3, 'Ηλεκτρικό');
+INSERT INTO cartype VALUES(4, 'Υβριδικό');
+
+# Τυχαίες τιμές για τα στοιχεία καταστημάτων της εταιρείας
+INSERT INTO store(city, addressname, addressnumber, postalcode) VALUES('Αθήνα', 		'Καραολή', 		'82', 	15625);
+INSERT INTO store(city, addressname, addressnumber, postalcode) VALUES('Αθήνα', 		'Παπαρίζου',	'36Α', 	15332);
+INSERT INTO store(city, addressname, addressnumber, postalcode) VALUES('Θεσσαλονίκη', 	'Καζαντζίδη', 	'12', 	55142);
+INSERT INTO store(city, addressname, addressnumber, postalcode) VALUES('Θεσσαλονίκη', 	'Μητροπάνου', 	'43', 	54754);
+
+# Τυχαίες τιμές για τα σημεία εξυπηρέτησης της εταιρείας
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Κηπίωνος',	'12',	15329, 1);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Βενιζέλου',	'8',	15178, 1);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Πολύκαστρου',	'43Α',	15126, 1);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Κυπριώτη',	'27',	15928, 2);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Παπαφλέσσα',	'170',	15862, 2);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Καρρά',		'166',	15854, 2);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Κορώνας',		'43',	54266, 3);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Πηγαδιού',	'23Α',	54292, 3);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Καλαμαριάς',	'12',	55189, 4);
+INSERT INTO location(addressname, addressnumber, postalcode, storeid) VALUES('Τερζή',		'54',	55113, 4);
+
+#Τυχαίες τιμές για τα αυτοκίνητα που διαθέτει ήδη η εταιρεία
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ITA8945', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('YTA4298', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('HTA8914', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('OIP4232', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ITA5613', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('YTT4136', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('HTA6132', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 3);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('OIT2346', 'Hyundai Accent',		1, 3, 5, 5, 'Όχι', 30.0, 3);	
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('KOP4323', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 4);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ZTY9023', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 4);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('KOI6732', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('MOI1532', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('KOP7343', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ZTY2364', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('KOI7363', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('MOI2435', 'Nissan Almera',		3, 2, 5, 4, 'Ναι', 25.5, 2);	
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ETI1234', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 3);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('HIO0983', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 3);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('MKN2353', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 4);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('NOM1234', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 4);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ETI6513', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('HIO1363', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('MKN1632', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('NOM1639', 'Hyundai i10',		1, 2, 5, 5, 'Όχι', 23.6, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('NIO2345', 'Hyundai i20',		4, 3, 5, 5, 'Ναι', 40.0, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('POE1442', 'Hyundai i20',		4, 3, 5, 5, 'Ναι', 40.0, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('NIO6134', 'Hyundai i20',		4, 3, 5, 5, 'Ναι', 40.0, 3);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('POE1346', 'Hyundai i20',		4, 3, 5, 5, 'Ναι', 40.0, 3);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('AEI3255', 'Nissan Qashqai',		1, 3, 5, 5, 'Όχι', 67.5, 4);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('AEI6134', 'Nissan Qashqai',		1, 3, 5, 5, 'Όχι', 67.5, 4);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('POE9824', 'Nissan Qashqai+2',	2, 4, 7, 5, 'Όχι', 74.0, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('POE6134', 'Nissan Qashqai+2',	2, 4, 7, 5, 'Όχι', 74.0, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ITO0978', 'Suzuki Jimny',		1, 2, 4, 5, 'Όχι', 30.5, 1);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('NIK9824', 'Suzuki Jimny',		1, 2, 4, 5, 'Όχι', 30.5, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('ITT2654', 'Suzuki Jimny',		1, 2, 4, 5, 'Όχι', 30.5, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('NIA3246', 'Suzuki Jimny',		1, 2, 4, 5, 'Όχι', 30.5, 2);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('POZ7632', 'Smart Fortwo',		4, 1, 2, 3, 'Ναι', 20.0, 3);
+INSERT INTO car(licenseplate, model, typeid, sizeid, seats, doors, conventional, priceperday, storeid)
+	VALUES('POZ2134', 'Smart Fortwo',		4, 1, 2, 3, 'Ναι', 20.0, 3);
+
+# Τυχαίες τιμές για πελάτες που έχουν ήδη καταχωρηθεί στην βάση δεδομένων
+INSERT INTO customer VALUES (243542356, 'Δέσποινα',		'Παπαδοπούλου',	'd.papadopoulou@hotmail.com',	'6983543671',	'2105149261');
+INSERT INTO customer VALUES (801136136, 'Χριστόφορος',	'Αλεξίου',		'chrisalex@hotmail.com',		'6972312544',	'2102645926');
+INSERT INTO customer VALUES (234613426, 'Αδαμαντία',	'Θεοτοκάτου', 	'a.theo@gmail.com',				'6943244432',	'6943244432');
+INSERT INTO customer VALUES (412136143, 'Αριστείδης',	'Περρής', 		'aristper@yahoo.gr',			'6972376534',	'2302658746');
+INSERT INTO customer VALUES (109134613,	'Μαρία',		'Αθανασίου',	'mariath@gmail.com',			'6939812387',	'2106258923');
+INSERT INTO customer VALUES (686136613,	'Παναγιώτα',	'Νικοπολίτη',	'nikopol73@yahoo.gr',			'6972309786',	'6972309786');
+INSERT INTO customer VALUES (543136136,	'Μανώλης',		'Βίσκας',		'm.viskas@hotmail.com',			'6939837485',	'6939837485');
+INSERT INTO customer VALUES (189835243,	'Θεόδωρος',		'Αγγελίνας',	'aggeltheo@gmail.com',			'6943210987',	'2102658742');
+INSERT INTO customer VALUES (172724525,	'Χρήστος',		'Βλάσσης',		'christosvlas@hotmail.com',		'6939723987',	'2302658475');
+INSERT INTO customer VALUES (419247523,	'Πέτρος',		'Αρβανιτάκης',	'p.arvanitakis@yahoo.com',		'6972365134',	'2102659182');
+INSERT INTO customer VALUES (435572243,	'Αντώνης',		'Παύλου',		'a.paulou@gmail.com',			'6939873233',	'2202658745');
+INSERT INTO customer VALUES (835824246,	'Αθανάσιος',	'Πετράκης',		'athanpet@gmail.com',			'6983512674',	'6983512674');
+INSERT INTO customer VALUES (205724345,	'Ηλίας',		'Μακρής',		'makrilias@yahoo.com',			'6943272453',	'2102658475');
+INSERT INTO customer VALUES (502527423,	'Κρινιώ',		'Μαροπούλου',	'krinmark@gmail.com',			'6983526433',	'2302659852');
+INSERT INTO customer VALUES (503275234,	'Μαριλένα',		'Κρέσπα',		'marilenakrespa@hotmail.com',	'6983562266',	'6983562266');
+INSERT INTO customer VALUES (342247256,	'Κώστας',		'Φραγκούλης',	'fragk84@yahoo.gr',				'6939863226',	'2102658975');
+INSERT INTO customer VALUES (153257256,	'Μαρία',		'Αλεβιζάτου',	'm.alevizatou@hotmail.com',		'6983523463',	'2102658735');
+INSERT INTO customer VALUES (901836523,	'Κυριάκος',		'Ρούσσης',		'rouskyr12@gmail.com',			'6938823463',	'6938823463');
+
+#Τυχαίες τιμές για ενοικιάσεις που υποτίθεται έχουν ήδη γίνει (έχει πραγματοποιηθεί και η παράδοση και η παραλαβή)
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(243542356, 1,  3, '2023-02-20 11:00:00', 'Ναι', 1, '2023-02-25 18:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(801136136, 2,  2, '2023-02-23 12:00:00', 'Ναι', 2, '2023-02-24 13:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(234613426, 3,  1, '2023-03-01 10:30:00', 'Ναι', 3, '2023-03-10 11:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(412136143, 4,  6, '2023-03-02 11:00:00', 'Ναι', 4, '2023-03-04 17:30:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(109134613, 5,  5, '2023-03-05 09:30:00', 'Ναι', 5, '2023-03-11 11:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(686136613, 6,  4, '2023-03-16 13:00:00', 'Ναι', 6, '2023-03-27 12:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(543136136, 7,  8, '2023-04-04 12:00:00', 'Ναι', 7, '2023-04-08 14:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(189835243, 8,  7, '2023-04-16 12:00:00', 'Ναι', 8, '2023-04-20 14:30:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(172724525, 9,  10, '2023-04-23 12:30:00', 'Ναι', 9, '2023-05-01 13:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(419247523, 10, 9, '2023-05-09 14:00:00', 'Ναι', 10, '2023-05-13 09:30:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(435572243, 11, 3, '2023-06-18 10:00:00', 'Ναι', 1, '2023-06-20 12:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(835824246, 12, 2, '2023-06-27 09:30:00', 'Ναι', 2, '2023-07-03 13:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(205724345, 13, 1, '2023-08-02 11:00:00', 'Ναι', 3, '2023-08-09 18:30:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(502527423, 14, 6, '2023-08-13 11:30:00', 'Ναι', 4, '2023-08-19 17:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(342247256, 15, 5, '2023-08-14 10:00:00', 'Ναι', 5, '2023-08-19 14:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(153257256, 16, 4, '2023-08-15 10:30:00', 'Ναι', 6, '2023-08-22 12:00:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(901836523, 17, 8, '2023-12-23 11:00:00', 'Ναι', 7, '2024-01-02 13:30:00', 'Ναι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(435572243, 1,  1, '2024-04-30 11:00:00', 'Όχι', 3, '2024-05-20 18:00:00', 'Όχι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(412136143, 4,  5, '2024-04-30 11:00:00', 'Όχι', 6, '2024-05-15 17:30:00', 'Όχι');
+INSERT INTO rent(customerdriverlicense, carid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned) 
+	VALUES(419247523, 17, 7, '2024-06-01 11:00:00', 'Όχι', 8, '2024-06-12 13:30:00', 'Όχι');
+
+# Από τις 3 τελευταίες ενοικιάσεις που υποτίθεται έχουν καταχωρηθεί και οι πελάτες δεν είχαν παραλάβει ακόμη τα αυτοκίνητα,
+# καταχωρώ ότι παρέλαβαν τα αυτοκίνητα
+UPDATE rent SET delivered='Ναι' WHERE rentid=18;
+UPDATE rent SET delivered='Ναι' WHERE rentid=19;

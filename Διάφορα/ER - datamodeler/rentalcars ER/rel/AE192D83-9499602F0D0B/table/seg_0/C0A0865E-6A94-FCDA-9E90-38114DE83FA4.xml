@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C0A0865E-6A94-FCDA-9E90-38114DE83FA4" name="customer">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>0D11F685-0089-BD13-CDB1-D4DEA1555B0D</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="driverLicense" id="4FE18A44-DD2F-6703-0795-ACA403974E11">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>10BB39F8-A3FC-B2B2-47BD-12D8E3DE2C42</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="firstName" id="C71799E0-8817-0F67-8157-51F30B1ED6F4">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>4E968D8F-F49F-FC7B-CB49-1BB78AEFBF36</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lastName" id="27D6B1D0-6B8A-1BF2-BF2F-1AAECFB93FFC">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>2F575406-60A8-B63A-09B8-7B466CF80646</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="2D42BA7E-1C9A-FF0F-5F2E-20E156AE59F0">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>5B2504C0-45F9-9076-F95B-C555F97DCB3F</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cellPhoneNumber" id="B4522319-4E22-8B01-7803-E6FC51FE1BAB">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>6FF016BC-BB87-86AB-AC14-22EE683F0BF8</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="homePhoneNumber" id="FA8CADED-4D1B-5197-5DAF-0502B967D38B">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>1A6D0EF5-59FA-936B-9BFE-EC726E6705BF</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F9F0B117-15E3-6202-DCE1-04DB8201FEB3" name="customer_PK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>4AEACD0F-B76A-8C35-AE4A-6576EE9A7E74</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4FE18A44-DD2F-6703-0795-ACA403974E11"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

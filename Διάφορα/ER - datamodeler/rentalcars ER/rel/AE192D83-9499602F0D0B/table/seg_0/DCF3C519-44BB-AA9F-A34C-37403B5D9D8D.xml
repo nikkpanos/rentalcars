@@ -1,0 +1,185 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCF3C519-44BB-AA9F-A34C-37403B5D9D8D" name="car">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>3992CED9-143D-4070-B00B-F0A2EAEAF730</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="carid" id="8E73D937-D998-1CC1-195E-3F28159FFC25">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>CAB3C6B9-2569-BC6C-A55E-91FA34A67F4C</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="model" id="7F754912-3DEF-0E16-4772-6FABD2B10F4F">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>FFAA66E2-0B44-A045-3A61-922B4704CC4B</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="carType_typeid" id="794ADD34-D03A-BC5F-A862-D72A5F524669">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>43165205-7752-7A53-7BD0-ACF725D54FE8</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D7DAB95-D65A-034D-3E9B-2D1C603E2B4B" referredColumn="E8AA8E8D-3748-8888-A97E-7B6DE92780BB"/>
+</associations>
+</Column>
+<Column name="carSize_sizeid" id="201784DD-636A-9675-3080-F135D609690D">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>1495F466-02C0-D712-29D1-3CB9E65B0A92</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1666558-034A-035C-18B4-B41A7BA4387E" referredColumn="EDD07B86-FC65-7F44-8F7F-299A3ED33BC8"/>
+</associations>
+</Column>
+<Column name="seats" id="985DE089-9869-D60D-0806-F5B93CDDEF4B">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>D25A6CAB-2E53-94E0-BF3B-A1C2A3053DF7</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="doors" id="995B4B2F-375A-B496-8AB7-DF5385104DF6">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>45E07FF7-D700-0A00-A7CA-2D497E206EED</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="conventional" id="2450D446-DA86-152F-D002-E739CC46A031">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>FA4D7AE1-6B4A-F3B8-972A-64A1F6FC5762</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pricePerDay" id="6107FDA3-2630-DC88-ECE4-94F3495D3DCC">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>4CA7CC73-366B-AC29-1313-0DCEEDBE1018</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="licensePlate" id="2BDBE71F-F39B-97C8-2C2A-EABF779B6CB3">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-25 18:11:31 UTC</createdTime>
+<generatorID>C3A836BF-F9F0-D7AF-D0C1-E9AE403B8BBD</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="store_storeid" id="F249DF8A-0418-3859-7316-41B74FD5F1EE">
+<createdBy>panag</createdBy>
+<createdTime>2024-05-07 17:32:19 UTC</createdTime>
+<generatorID>497FEE43-EDDF-1472-975C-68EDE51913E0</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="608643A1-08BE-824E-9EED-8C1F673D5059" referredColumn="B89D215B-C59A-1F25-FD6C-A97E1FC00D3F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AB35CE1D-1050-3464-C0D5-622BBCB271EC" name="car_PK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>4C75A2DC-DD28-56C8-8BA1-D40EABFDBEEE</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8E73D937-D998-1CC1-195E-3F28159FFC25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F8067792-2CD4-CC9B-E9D7-67C9408074AE" name="car_carSize_FK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>2800FFD5-4DC8-7F7A-0E41-0579D4F698D0</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="201784DD-636A-9675-3080-F135D609690D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55A37EAF-BC1B-ADC4-80A1-95E63A71EFB3" name="car_carType_FK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:53 UTC</createdTime>
+<generatorID>E8FF7F0F-B8C5-39B5-A163-747F64C6CBF8</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="794ADD34-D03A-BC5F-A862-D72A5F524669"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B6D83F3B-161A-8377-D2AC-80C5BF2A009E" name="car_store_FK">
+<createdBy>panag</createdBy>
+<createdTime>2024-05-07 17:32:19 UTC</createdTime>
+<generatorID>F12BCC94-F8CB-0E94-F247-390097621518</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F249DF8A-0418-3859-7316-41B74FD5F1EE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

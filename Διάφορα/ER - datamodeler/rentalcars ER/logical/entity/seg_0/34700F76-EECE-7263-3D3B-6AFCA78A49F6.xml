@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="34700F76-EECE-7263-3D3B-6AFCA78A49F6" name="carType">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:38:58 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="typeid" id="51D0B017-015C-4D8D-6A5F-B03386D99D21">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:39:18 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="type" id="25670BF6-7F00-C786-C8D4-2E2FAC7DEAC7">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:39:40 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EC11E1DB-AD38-3F90-D94B-234FA4E7E578" name="carType PK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:39:37 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>51D0B017-015C-4D8D-6A5F-B03386D99D21</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

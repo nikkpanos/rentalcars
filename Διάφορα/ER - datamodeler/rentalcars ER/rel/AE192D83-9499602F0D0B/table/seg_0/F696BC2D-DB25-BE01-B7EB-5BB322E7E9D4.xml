@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F696BC2D-DB25-BE01-B7EB-5BB322E7E9D4" name="store">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-29 06:10:52 UTC</createdTime>
+<generatorID>098EBED8-F3BA-E9BA-24F2-71AC428C7816</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="storeid" id="B89D215B-C59A-1F25-FD6C-A97E1FC00D3F">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-29 06:10:52 UTC</createdTime>
+<generatorID>120E1982-C419-B98B-9CDA-3A59CC0F3180</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="city" id="DEA3510B-A8F4-2C36-43D9-1BF2537B0758">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-29 06:10:52 UTC</createdTime>
+<generatorID>3D644E95-70C3-06F8-4D2F-F5C52043C17F</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="addressName" id="3DF56B1B-0352-CAA2-FDB3-508C1B4D99A7">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-29 06:19:20 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="addressNumber" id="C65BE755-B487-D6CA-A804-90A9B70C61B5">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-29 06:19:20 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="postalCode" id="2D8B72B0-030F-272A-F717-20FA98009F8F">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-29 06:19:20 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DF791A63-7020-0B2C-26F8-A0E3775F8C9E" name="store_PK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-29 06:10:52 UTC</createdTime>
+<generatorID>A9CB5E48-2D84-3581-F6F3-F37F39263745</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B89D215B-C59A-1F25-FD6C-A97E1FC00D3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

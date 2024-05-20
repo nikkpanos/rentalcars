@@ -1,0 +1,153 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="87D0EDE7-B539-D564-69DB-7F9BE56CF996" name="rent">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:35:07 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rentid" id="44654302-DEAE-A17F-4564-4D49A07418DC">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:42:29 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="deliveryDate" id="AE9B71B3-1911-AC17-1BE7-952C019EAB1E">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:36:11 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="delivered" id="9587AF94-B2A8-9866-AFD6-6EEC5473B553">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:40:57 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="returnDate" id="E938BC8E-0F98-445E-7E22-465A44176A21">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:40:33 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="returned" id="009A8431-A89A-B918-5E94-458ACD56CE1F">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:41:32 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="locationid" id="EC4D0445-3AA3-3E74-5C0C-DEF5FEC2F204">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:02:35 UTC</createdTime>
+<generatorID>131ED3E4-7B79-B9B3-AEA3-37B00CB55682</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<referedAttribute>7FA6802B-E102-FAFD-1FB8-FAD69D1BAB46</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="locationid1" id="ABEB0CFA-C4D9-0EBE-5E02-DE2EDEFC115E">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:04:57 UTC</createdTime>
+<generatorID>82B1E1EE-A124-BDCC-DD9A-6CCC23704453</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<referedAttribute>7FA6802B-E102-FAFD-1FB8-FAD69D1BAB46</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="driverLicense" id="2E16B320-266D-7EBB-4278-69A16690B806">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:14:58 UTC</createdTime>
+<generatorID>F8834401-3AA9-1545-02FA-F07A9E569953</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<referedAttribute>10BB39F8-A3FC-B2B2-47BD-12D8E3DE2C42</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="carid" id="0D12FD8B-63F3-C9F9-5473-928D6CCAFAFF">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:17:05 UTC</createdTime>
+<generatorID>F0BD1004-40CA-332C-5935-7472BE5FEF18</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<referedAttribute>CAB3C6B9-2569-BC6C-A55E-91FA34A67F4C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0209F947-E690-9063-6B79-6F06DB12AF98" name="rent PK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:42:48 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>44654302-DEAE-A17F-4564-4D49A07418DC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

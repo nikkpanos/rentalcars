@@ -1,0 +1,273 @@
+#################################################################################################################################################################################
+############################################# ΑΛΛΑΓΕΣ ΠΟΥ ΕΚΑΝΑ ΑΠΟ ΤΟ ΠΑΡΑΓΟΜΕΝΟ DDL ΟΥ ΠΗΡΑ ΑΠΟ ΤΟ MYQLINES ###################################################################
+#################################################################################################################################################################################
+# 
+# 
+# 1.	ΕΒΑΛΑ ΕΝΤΟΛΕΣ ΔΗΜΙΟΥΡΓΙΑΣ ΒΑΣΗΣ ΔΕΔΟΜΕΝΩΝ ΚΑΙ ΚΑΘΟΡΙΣΜΟΥ ΚΩΔΙΚΟΠΟΙΗΣΗΣ ΔΕΔΟΜΕΝΩΝ, ΚΩΔΙΚΟΠΟΙΗΣΗΣ ΔΕΔΟΜΕΝΩΝ ΜΕΤΑΦΟΡΑΣ ΜΕΣΩ ΣΥΝΔΕΣΕΩΝ ΑΠΟ ΚΑΙ ΠΡΟΣ ΣΤΗ ΒΑΣΗ (UTF8MB4),
+# 		ΤΥΠΟΠΟΙΗΣΗΣ ΠΟΥ ΧΡΗΣΙΜΟΠΟΙΕΙΤΑΙ ΓΙΑ ΣΥΓΚΡΙΣΕΙΣ, ΤΑΞΙΝΟΜΗΣΕΙΣ ΚΛΠ ΣΤΟ UTF8MB4 (utf8mb4_0900_ai_ci) ΚΑΘΩΣ ΚΑΙ ΚΑΘΟΡΙΣΑ ΡΗΤΑ ΤΗΝ ΜΗΧΑΝΗ ΒΔ ΠΟΥ ΘΑ ΧΡΗΣΙΜΟΠΟΙΕΙΤΑΙ (ΙnnoDB).  
+# 2.	ΕΒΑΛΑ ΤΑ PRIMARY KAI FOREIGN KEYS ΜΕΣΑ ΣΤΟΥΣ ΟΡΙΣΜΟΥΣ ΤΩΝ ΠΙΝΑΚΩΝ ΓΙΑ ΝΑ ΕΙΝΑΙ ΠΙΟ ΣΥΚΓΡΟΤΗΜΕΝΑ.
+# 3.	ΑΛΛΑΞΑ ΟΝΟΜΑΣΙΕΣ ΣΤΑ ΓΝΩΡΙΣΜΑΤΑ ΠΟΥ ΤΟ DATAMODELER ΕΦΤΙΑΧΝΕ ΜΟΝΟ ΤΟΥ (Π.Χ. FOREIGN KEYS) ΓΙΑΤΙ ΕΤΣΙ ΟΠΩΣ ΕΙΝΑΙ ΤΩΡΑ ΕΙΝΑΙ ΠΙΟ ΕΥΑΝΑΓΝΩΣΤΑ.
+# 4.	ΓΙΑ ΝΑ ΕΙΝΑΙ ΠΙΟ ΚΑΤΑΝΟΗΤΑ ΤΑ ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ ΤΩΝ ΓΝΩΡΙΣΜΑΤΩΝ ΚΑΙ ΝΑ ΦΑΙΝΟΝΤΑΙ ΠΙΟ ΕΥΚΟΛΑ ΟΙ ΙΔΙΟΤΗΤΕΣ ΤΩΝ ΠΙΝΑΚΩΝ, ΕΒΑΛΑ UNIQUE ΑΚΟΜΗ ΚΑΙ ΣΤΑ PRIMARY KEY.
+# 5.	ΕΒΑΛΑ AUTO_INCREMENT ΟΠΟΥ ΗΘΕΛΑ ΝΑ ΑΥΞΑΝΕΤΑΙ ΜΟΝΟ ΤΟΥ ΤΟ PK, ΣΕ ΚΑΠΟΙΑ ΓΝΩΡΙΣΜΑΤΑ ΑΛΛΑΞΑ ΤΟΝ ΤΥΠΟ ΔΕΔΟΜΕΝΩΝ, ΔΛΔ ΕΒΑΛΑ ENUM ΟΠΟΥ ΗΘΕΛΑ, 
+# 6.	ΚΑΘΟΡΙΣΑ ΣΤΑ FOREIGN KEYS ΡΗΤΑ ΤΟ ΤΙ ΘΑ ΓΙΝΕΤΑΙ ΣΕ ΠΕΡΙΠΤΩΣΗ ΔΙΑΓΡΑΦΗΣ Ή ΤΡΟΠΟΠΟΙΗΣΗΣ ΤΗΣ ΠΡΑΓΜΑΤΙΚΗΣ ΤΙΜΗΣ ΣΤΟΝ ΠΑΤΕΡΑ ΠΙΝΑΚΑ. ΕΒΑΛΑ ΝΑ ΜΕΤΑΦΕΡΟΝΤΑΙ ΟΙ ΑΛΛΑΓΕΣ
+#		ΣΤΟΥΣ ΠΙΝΑΚΕΣ ΠΑΙΔΙΑ ΣΕ ΠΕΡΙΠΤΩΣΗ ΤΡΟΠΟΠΟΙΗΣΗΣ (ON UPDATE), ΕΝΩ ΣΕ ΠΕΡΙΠΤΩΣΗ ΔΙΑΓΡΑΦΗΣ ΕΒΑΛΑ ΝΑ ΜΗΝ ΕΠΙΤΡΕΠΕΑΤΙ Η ΔΙΑΓΡΑΦΗ (ΜΕ ΜΟΝΗ ΕΞΑΙΡΕΣΗ ΤΟ carid ΣΤΟΝ ΠΙΝΑΚΑ
+#		rent, ΔΙΟΤΙ ΣΕ ΕΝΔΕΧΟΜΕΝΟ DELETE QUERY ΣΕ ΕΝΑ car ΘΕΛΩ ΟΝΤΩΣ ΝΑ ΔΙΑΓΡΑΦΕΤΑΙ ΤΟ AYTOKINHTO ΚΑΙ ΝΑ ΔΙΑΓΡΑΦΟΝΤΑΙ ΚΑΙ ΟΙ ΕΝΟΙΚΙΑΣΕΙΣ ΠΟΥ ΑΦΟΡΟΥΣΑΝ ΤΟ ΑΥΤΟΚΙΝΗΤΟ ΑΥΤΟ 
+#		ΟΠΟΤΕ ΕΒΑΛΑ ΕΚΕΙ ON DELETE CASCADE). 
+# 7.	ΑΛΛΑΞΑ ΤΑ ΔΥΟ TRIGGER ΠΟΥ ΥΠΗΡΧΑΝ ΣΤΟ ΠΑΡΑΓΟΜΕΝΟ DDL ΛΟΓΩ NON-TRANSFERABLE, ΔΙΟΤΙ ΤΟ ΣΥΝΤΑΚΤΙΚΟ ΤΟΥΣ ΗΤΑΝ ΛΑΘΟΣ.
+# 8.	ΔΗΜΙΟΥΡΓΗΣΑ VIEWS ΤΑ ΟΠΟΙΑ ΧΡΗΣΙΜΟΠΟΙΩ ΣΤΟ ΠΡΟΓΡΑΜΜΑ ΓΙΑ ΜΕΓΑΛΥΤΕΡΗ ΕΥΚΟΛΙΑ ΚΑΤΑ ΤΗΝ ΠΑΡΟΥΣΙΑΣΗ ΣΥΓΚΕΚΡΙΜΕΝΩΝ ΣΤΟΙΧΕΙΩΝ. ΓΙΑ ΠΑΡΑΔΕΙΓΜΑ, Ο ΠΙΝΑΚΑΣ car ΕΧΕΙ ΜΕΣΑ
+#		ΓΝΩΡΙΣΜΑΤΑ ΟΠΩΣ ΤΑ sizeid, typeid ΤΑ ΟΠΟΙΑ ΑΝ ΤΑ ΕΜΦΑΝΙΖΑ ΣΤΟΝ ΧΡΗΣΗ ΔΕΝ ΘΑ ΤΟΥ ΕΔΙΝΑ ΝΑ ΚΑΤΑΛΑΒΕΙ ΤΙΠΟΤΑ ΙΔΙΑΙΤΕΡΟ. ΟΠΟΤΕ ΓΙΑ ΝΑ ΕΜΦΑΝΙΣΩ ΤΑ ΣΤΟΙΧΕΙΑ ΑΥΤΟΚΙΝΗΤΩΝ 
+# 		ΣΤΟΝ ΧΡΗΣΗ ΕΦΤΙΑΞΑ ΕΝΑ VIEW ΤΟ ΟΠΟΙΟ ΑΠΟΤΕΛΕΙ ΣΥΝΝΕΝΩΣΗ car, cartype, carsize, store ΚΡΑΤΩΝΤΑΣ ΜΟΝΟ ΤΑ ΣΤΟΙΧΕΙΑ ΠΟΥ ΕΧΟΥΝ ΠΕΡΙΣΣΟΤΕΡΗ ΑΞΙΑ ΚΑΙ ΔΙΝΟΥΝ ΚΑΛΥΤΕΡΗ
+#		ΠΛΗΡΟΦΟΡΙΑ ΣΤΟΝ ΧΡΗΣΤΗ.
+# 9.	ΔΗΜΙΟΥΡΓΗΣΑ STORED PROCEDURES ΓΙΑ ΤΗΝ ΕΥΡΕΣΗ ΔΙΑΘΕΣΙΜΩΝ ΑΥΤΟΚΙΝΗΤΩΝ ΒΑΣΗ ΦΙΛΤΡΩΝ, ΓΙΑ ΝΑ ΥΠΑΡΧΟΥΝ ΕΤΟΙΜΑ ΠΡΟΣ ΧΡΗΣΗ ΣΤΟ BACKEND (ΣΤΗΝ ΕΦΑΡΜΟΓΗ).
+# 10.	ΔΗΜΙΟΥΡΓΗΣΑ ΕΞΤΡΑ TRIGGERS ΓΙΑ ΝΑ ΠΕΡΙΟΡΙΖΟΥΝ ΕΝΕΡΓΕΙΕΣ ΟΠΩΣ Π.Χ. ΚΑΤΑΧΩΡΙΣΗ ΕΝΟΙΚΙΑΣΗΣ ΜΕ ΤΙΣ ΤΟΠΟΘΕΣΙΕΣ ΠΑΡΑΛΑΒΗΣ ΚΑΙ ΠΑΡΑΔΟΣΗΣ ΝΑ ΑΝΤΙΣΟΙΧΟΥΝ ΣΕ ΔΙΑΦΟΡΕΤΙΚΟ ΚΑΤΑΣΤΗΜΑ.
+# 
+# 
+#################################################################################################################################################################################
+#################################################################################################################################################################################
+#################################################################################################################################################################################
+
+DROP DATABASE IF EXISTS rental_cars;
+CREATE DATABASE IF NOT EXISTS rental_cars CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE rental_cars;
+SET NAMES 'utf8mb4';
+
+
+CREATE TABLE customer (
+    driverlicense   VARCHAR(40) NOT NULL UNIQUE,
+    firstname       VARCHAR(40) NOT NULL,
+    lastname        VARCHAR(40) NOT NULL,
+    email           VARCHAR(50) NOT NULL,
+    cellphonenumber VARCHAR(20) NOT NULL,
+    homephonenumber VARCHAR(20) NOT NULL,
+	CONSTRAINT customer_pk PRIMARY KEY (driverlicense)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE store (
+	storeid		  INTEGER NOT NULL UNIQUE AUTO_INCREMENT,
+	city		  VARCHAR(40) NOT NULL,
+	addressname   VARCHAR(100) NOT NULL,
+    addressnumber VARCHAR(10) NOT NULL,
+    postalcode    INTEGER NOT NULL,
+	CONSTRAINT store_pk PRIMARY KEY (storeid)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE location (
+    locationid    INTEGER NOT NULL UNIQUE AUTO_INCREMENT,
+    addressname   VARCHAR(100) NOT NULL,
+    addressnumber VARCHAR(10) NOT NULL,
+    postalcode    INTEGER NOT NULL,
+	storeid		  INTEGER NOT NULL,
+	CONSTRAINT location_pk PRIMARY KEY (locationid),
+	CONSTRAINT location_store_fk FOREIGN KEY (storeid) REFERENCES store(storeid) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE carsize (
+    sizeid INTEGER NOT NULL,
+    size   VARCHAR(40) NOT NULL,
+	CONSTRAINT carsize_pk PRIMARY KEY (sizeid)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE cartype (
+    typeid INTEGER NOT NULL,
+    type   VARCHAR(50) NOT NULL,
+	CONSTRAINT cartype_pk PRIMARY KEY (typeid)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE car (
+    carid        INTEGER NOT NULL UNIQUE AUTO_INCREMENT,
+	licenseplate VARCHAR(30),
+    model        VARCHAR(50) NOT NULL,
+    typeid       INTEGER NOT NULL,
+    sizeid       INTEGER NOT NULL,
+    seats        INTEGER NOT NULL,
+    doors        INTEGER NOT NULL,
+    conventional ENUM('Ναι', 'Όχι') NOT NULL,
+    priceperday  DECIMAL(4,1) NOT NULL,
+    storeid   INTEGER,
+	CONSTRAINT car_pk PRIMARY KEY (carid),
+	CONSTRAINT car_carsize_fk FOREIGN KEY (sizeid) REFERENCES carsize(sizeid) ON DELETE RESTRICT ON UPDATE CASCADE,
+	CONSTRAINT car_cartype_fk FOREIGN KEY (typeid) REFERENCES cartype(typeid) ON DELETE RESTRICT ON UPDATE CASCADE,
+	CONSTRAINT car_store_fk FOREIGN KEY (storeid) REFERENCES store(storeid) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE rent (
+    rentid                INTEGER NOT NULL UNIQUE AUTO_INCREMENT,
+    customerdriverlicense VARCHAR(40) NOT NULL,
+    carid                 INTEGER NOT NULL,
+    deliverylocationid    INTEGER NOT NULL,
+    deliverydate          DATETIME NOT NULL,
+    delivered             ENUM('Ναι', 'Όχι') NOT NULL DEFAULT 'Όχι',
+    returnlocationid      INTEGER NOT NULL,
+    returndate            DATETIME NOT NULL,
+    returned              ENUM('Ναι', 'Όχι') NOT NULL DEFAULT 'Όχι',
+	CONSTRAINT rent_pk PRIMARY KEY (rentid),
+	CONSTRAINT rent_customer_fk FOREIGN KEY (customerdriverlicense) REFERENCES customer(driverlicense) ON DELETE RESTRICT ON UPDATE CASCADE,
+	CONSTRAINT rent_car_fk FOREIGN KEY (carid) REFERENCES car(carid) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT rent_location_fk1 FOREIGN KEY (deliverylocationid) REFERENCES location(locationid) ON DELETE RESTRICT ON UPDATE CASCADE,
+	CONSTRAINT rent_location_fk2 FOREIGN KEY (returnlocationid) REFERENCES location(locationid) ON DELETE RESTRICT ON UPDATE CASCADE,
+	CONSTRAINT date_constraint CHECK(deliverydate<=returndate),
+	CONSTRAINT delivery_first_constraint CHECK(NOT(delivered='Όχι' AND returned='Ναι'))
+)ENGINE=InnoDB;
+
+
+# Απαγορεύει την αλλαγή του τύπου ή του μεγέθους ενός αμαξιού
+DROP TRIGGER IF EXISTS fkntm_car;
+DELIMITER $$
+CREATE TRIGGER fkntm_car BEFORE UPDATE ON car FOR EACH ROW
+BEGIN
+	IF ( NEW.typeid != OLD.typeid OR NEW.sizeid != OLD.sizeid ) THEN
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Non Transferable FK constraint on table car is violated';
+	END IF;
+END
+$$ DELIMITER ;
+
+
+# Απαγορεύει την αλλαγή του πελάτη που έκανε μια κράτηση ή του αυτοκινήτου στο οποίο αφορά μια κράτηση
+DROP TRIGGER IF EXISTS fkntm_rent;
+DELIMITER $$
+CREATE TRIGGER fkntm_rent BEFORE UPDATE ON rent FOR EACH ROW
+BEGIN
+	if ( NEW.customerdriverlicense != OLD.customerdriverlicense OR NEW.carid != OLD.carid ) THEN
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Non Transferable FK constraint on table car is violated';
+	END IF;
+END
+$$ DELIMITER ;
+
+
+# Δύο Triggers για να μην επιτρέπεται να υπάρχει εγγραφή στον πίνακα rent
+# με σημείο παραλαβής και σημείο παράδοσης τα οποία ανήκουν σε διαφορετικό κατάστημα.
+# Για παράδειγμα, δεν μπορεί κάποιος να παραλάβει ένα αυτοκίνητο από το Κατάστημα Α
+# και να το παραδώσει σε τοποθεσία που αντιστοιχεί στο Κατάστημα Β.
+DROP TRIGGER IF EXISTS delivery_return_store_update;
+DELIMITER $$
+CREATE TRIGGER delivery_return_store_update BEFORE UPDATE ON rent FOR EACH ROW
+BEGIN
+	DECLARE delivery_store_id VARCHAR(40);
+	DECLARE return_store_id VARCHAR(40);
+	DECLARE same_store TINYINT;
+	SET delivery_store_id = (SELECT l.storeid FROM store s INNER JOIN location l ON s.storeid=l.storeid WHERE l.locationid = NEW.deliverylocationid);
+	SET return_store_id = (SELECT l.storeid FROM store s INNER JOIN location l ON s.storeid=l.storeid WHERE l.locationid = NEW.returnlocationid);
+	SET same_store = ( SELECT STRCMP(delivery_store_id, return_store_id) );
+	IF (same_store <> 0) THEN
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Location of delivery and return must be of the same store constraint is violated';
+	END IF;
+END
+$$ DELIMITER ;
+
+
+DROP TRIGGER IF EXISTS delivery_return_store_insert;
+DELIMITER $$
+CREATE TRIGGER delivery_return_store_insert BEFORE INSERT ON rent FOR EACH ROW
+BEGIN
+	DECLARE delivery_store_id VARCHAR(40);
+	DECLARE return_store_id VARCHAR(40);
+	DECLARE same_store TINYINT;
+	SET delivery_store_id = (SELECT l.storeid FROM store s INNER JOIN location l ON s.storeid=l.storeid WHERE l.locationid = NEW.deliverylocationid);
+	SET return_store_id = (SELECT l.storeid FROM store s INNER JOIN location l ON s.storeid=l.storeid WHERE l.locationid = NEW.returnlocationid);
+	SET same_store = ( SELECT STRCMP(delivery_store_id, return_store_id) );
+	IF (same_store <> 0) THEN
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Location of delivery and return must be of the same store constraint is violated';
+	END IF;
+END
+$$ DELIMITER ;
+
+
+# VIEW που επιστρέφει όλα τα χρήσιμα στοιχεία που αφορούν σε όλες τις ενοικιάσεις που έχουν καταχωρηθεί στη ΒΔ
+DROP VIEW IF EXISTS full_rent_info;
+CREATE VIEW full_rent_info AS
+SELECT rentid, customerdriverlicense, firstname, lastname, cellphonenumber, carid, model, 
+	   (SELECT city FROM location l INNER JOIN store s ON l.storeid=s.storeid WHERE locationid=deliverylocationid) AS city,
+	   car.storeid AS storeid, deliverylocationid, deliverydate, delivered, returnlocationid, returndate, returned, priceperday,
+	   TIMESTAMPDIFF(HOUR, deliverydate, returndate)/24 AS days, ROUND(TIMESTAMPDIFF(HOUR, deliverydate, returndate)/24)*priceperday AS totalprice
+FROM rent r NATURAL JOIN car INNER JOIN customer c ON r.customerdriverlicense=c.driverlicense;
+
+
+# VIEW που επιστρέφει τα χρήσιμα στοιχεία όλων των αυτοκινήτων που έχει η εταιρεία
+DROP VIEW IF EXISTS full_car_info;
+CREATE VIEW full_car_info AS
+SELECT carid, licenseplate, model, type, size, seats, doors, conventional, priceperday, storeid, city 
+FROM car c NATURAL JOIN cartype NATURAL JOIN carsize NATURAL JOIN store
+ORDER BY storeid;
+
+
+# VIEW που επιστρέφει τα χρήσιμα στοιχεία των αυτοκινήτων που τη δεδομένη στιγμή δεν έχουν καταχωρημένη καμία ενεργή/εκκρεμή ενοικίαση
+DROP VIEW IF EXISTS idle_car_info;
+CREATE VIEW idle_car_info AS
+SELECT DISTINCT *
+FROM full_car_info
+WHERE carid NOT IN(
+			SELECT carid FROM rent 
+            WHERE (returned IS NOT NULL AND STRCMP(returned, 'Όχι')=0 OR STRCMP(delivered, 'Όχι')=0)
+			)
+ORDER BY storeid;
+
+
+# VIEW που επιστρέφει τα χρήσιμα στοιχεία των αυτοκινήτων που δεν μπορούν να ενοικιαστούν τη στιγμή της αναζήτησης
+# διότι υπάρχει ενεργή/εκκρεμής ενοικίαση 
+DROP VIEW IF EXISTS not_available_car_info;
+CREATE VIEW not_available_car_info AS
+SELECT DISTINCT *
+FROM full_car_info
+WHERE carid IN(
+			SELECT carid FROM rent
+            WHERE (((STRCMP(returned, 'Όχι')=0 AND STRCMP(delivered, 'Όχι')=0) AND (CURRENT_TIMESTAMP() BETWEEN deliverydate AND returndate))
+					OR (STRCMP(returned, 'Όχι')=0 AND STRCMP(delivered, 'Ναι')=0))
+			);
+
+
+# VIEW που επιστρέφει τις καταχωρημένες ενοικιάσεις για τις οποίες οι πελάτες δεν έχουν παραλάβει ακόμη τα αυτοκίνητα
+DROP VIEW IF EXISTS pending_rent_info;
+CREATE VIEW pending_rent_info AS
+SELECT * FROM full_rent_info
+WHERE STRCMP(delivered, 'Όχι')=0;
+
+
+# Stored procedure για να επιστρέφει ποια θα είναι τα διαθέσιμα αυτοκίνητα 
+# σε μια συγκεκριμένη περίοδο και σε συγκεκριμένα σημεία εξυπηρέτησης.
+# Τα σημεία εξυπηρέτησης αφορούν σε ένα κατάστημα συγκεκριμένο. Θεωρώντας ότι ένα κατάστημα έχει τη δυνατότητα να μετακινεί τα αυτοκίνητά του
+# μεταξύ των τοποθεσιών του (σημείων εξυπηρέτησης που το αφορούν) για να εξυπηρετήσει τους πελάτες του, ως διαθέσιμα αυτοκίνητα 
+# έβαλα να επιστρέφονται όλα τα αυτοκίνητα του αντίστοιχου καταστήματος.
+DROP PROCEDURE IF EXISTS get_filtered_available_cars;
+DELIMITER $$
+CREATE PROCEDURE get_filtered_available_cars(IN deliverylocationid_param INTEGER, IN deliverydate_param DATETIME, IN returndate_param DATETIME)
+BEGIN
+	DECLARE storeid_param INTEGER;
+	SET storeid_param = (SELECT storeid FROM location WHERE locationid=deliverylocationid_param);
+	SELECT * FROM full_car_info 
+	WHERE storeid=storeid_param AND
+		  carid NOT IN( SELECT carid FROM full_rent_info 
+					    WHERE (STRCMP(returned, 'Όχι')=0 OR STRCMP(delivered, 'Όχι')=0) AND 
+							 ((deliverydate_param BETWEEN deliverydate AND returndate) OR
+							 (returndate_param BETWEEN deliverydate AND returndate) OR
+                             (deliverydate_param<deliverydate AND returndate_param>returndate))
+					);
+END
+$$ DELIMITER ;
+
+
+# Stored procedure, ίδιο με το παραπάνω με επιπλέον ένα φίλτρο, τον τύπο του αυτοκινήτου
+DROP PROCEDURE IF EXISTS get_filtered_available_cars_with_cartype;
+DELIMITER $$
+CREATE PROCEDURE get_filtered_available_cars_with_cartype(IN deliverylocationid_param INTEGER, IN deliverydate_param DATETIME, IN returndate_param DATETIME, IN cartypeid_param INTEGER)
+BEGIN
+	DECLARE storeid_param INTEGER;
+	DECLARE cartype_param VARCHAR(50);
+	SET cartype_param = (SELECT type FROM cartype WHERE typeid=cartypeid_param);
+	SET storeid_param = (SELECT storeid FROM location WHERE locationid=deliverylocationid_param);
+	SELECT * FROM full_car_info 
+	WHERE storeid=storeid_param AND
+		  type=cartype_param AND 
+		  carid NOT IN( SELECT carid FROM full_rent_info 
+					    WHERE (STRCMP(returned, 'Όχι')=0 OR STRCMP(delivered, 'Όχι')=0) AND 
+							 ((deliverydate_param BETWEEN deliverydate AND returndate) OR
+							 (returndate_param BETWEEN deliverydate AND returndate) OR
+                             (deliverydate_param<deliverydate AND returndate_param>returndate))
+					);
+END
+$$ DELIMITER ;

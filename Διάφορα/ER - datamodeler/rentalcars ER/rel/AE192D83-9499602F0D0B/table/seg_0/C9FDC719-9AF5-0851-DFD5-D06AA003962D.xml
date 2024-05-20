@@ -1,0 +1,188 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C9FDC719-9AF5-0851-DFD5-D06AA003962D" name="rent">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>87D0EDE7-B539-D564-69DB-7F9BE56CF996</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rentid" id="C0F1CC0F-98F8-900B-CAFF-ED91661DB38F">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>44654302-DEAE-A17F-4564-4D49A07418DC</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_driverLicense" id="E8654D20-EE0A-6A7E-5305-CAE6118BA564">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>2E16B320-266D-7EBB-4278-69A16690B806</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="16E5B81E-A612-1C70-CB8E-61A95985F073" referredColumn="4FE18A44-DD2F-6703-0795-ACA403974E11"/>
+</associations>
+</Column>
+<Column name="car_carid" id="9F2F6ECA-B67C-BD1F-A900-78678CD26368">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>0D12FD8B-63F3-C9F9-5473-928D6CCAFAFF</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5A371557-4864-6BAC-F9CA-BD79BD81780A" referredColumn="8E73D937-D998-1CC1-195E-3F28159FFC25"/>
+</associations>
+</Column>
+<Column name="location_locationid" id="9CEA1022-7E86-9B06-6812-584459D8B651">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>EC4D0445-3AA3-3E74-5C0C-DEF5FEC2F204</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="16B100BF-D008-AEDA-2A27-63C0BAFCB5E7" referredColumn="E42E65E2-01BB-9360-6720-CA256B9E2FBB"/>
+</associations>
+</Column>
+<Column name="deliveryDate" id="2B3C945C-124D-AE3B-4927-0CDC28C911A0">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>AE9B71B3-1911-AC17-1BE7-952C019EAB1E</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="delivered" id="409256EE-1814-5480-140F-298F62A6B309">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>9587AF94-B2A8-9866-AFD6-6EEC5473B553</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="location_locationid2" id="99CEE6D3-9696-3551-ABFB-334B23810A95">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>ABEB0CFA-C4D9-0EBE-5E02-DE2EDEFC115E</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7834454C-E484-88FF-71B2-837FFB91E5CC" referredColumn="E42E65E2-01BB-9360-6720-CA256B9E2FBB"/>
+</associations>
+</Column>
+<Column name="returnDate" id="FF1B1D95-3F96-C8A8-7917-12850C8B1EBF">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>E938BC8E-0F98-445E-7E22-465A44176A21</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="returned" id="0FC77CF7-D6EF-318C-243F-5B737D3A614F">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>009A8431-A89A-B918-5E94-458ACD56CE1F</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CE5C887D-A137-7105-7A46-F3BE45DFBB64" name="rent_PK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:52 UTC</createdTime>
+<generatorID>0209F947-E690-9063-6B79-6F06DB12AF98</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0F1CC0F-98F8-900B-CAFF-ED91661DB38F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D0EB490C-0F60-3224-52BE-7D6DDF1A60E6" name="rent_customer_FK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:53 UTC</createdTime>
+<generatorID>F8834401-3AA9-1545-02FA-F07A9E569953</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8654D20-EE0A-6A7E-5305-CAE6118BA564"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="535C7980-38C8-B6BB-89CB-F1016A884286" name="rent_car_FK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:53 UTC</createdTime>
+<generatorID>F0BD1004-40CA-332C-5935-7472BE5FEF18</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F2F6ECA-B67C-BD1F-A900-78678CD26368"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13B2611C-1989-C132-43F1-4FEDFD020861" name="rent_location_FK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:53 UTC</createdTime>
+<generatorID>131ED3E4-7B79-B9B3-AEA3-37B00CB55682</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9CEA1022-7E86-9B06-6812-584459D8B651"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69938923-5388-3590-7247-FEB22A7C014F" name="rent_location_FKv2">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:48:53 UTC</createdTime>
+<generatorID>82B1E1EE-A124-BDCC-DD9A-6CCC23704453</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99CEE6D3-9696-3551-ABFB-334B23810A95"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

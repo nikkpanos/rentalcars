@@ -1,0 +1,164 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3992CED9-143D-4070-B00B-F0A2EAEAF730" name="car">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:02:16 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="carid" id="CAB3C6B9-2569-BC6C-A55E-91FA34A67F4C">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:06:40 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="licensePlate" id="C3A836BF-F9F0-D7AF-D0C1-E9AE403B8BBD">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-25 18:10:37 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="model" id="FFAA66E2-0B44-A045-3A61-922B4704CC4B">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:08:10 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="conventional" id="FA4D7AE1-6B4A-F3B8-972A-64A1F6FC5762">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:09:15 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="seats" id="D25A6CAB-2E53-94E0-BF3B-A1C2A3053DF7">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:09:15 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="doors" id="45E07FF7-D700-0A00-A7CA-2D497E206EED">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:09:15 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pricePerDay" id="4CA7CC73-366B-AC29-1313-0DCEEDBE1018">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:11:36 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="typeid" id="43165205-7752-7A53-7BD0-ACF725D54FE8">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:41:44 UTC</createdTime>
+<generatorID>E8FF7F0F-B8C5-39B5-A163-747F64C6CBF8</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<referedAttribute>51D0B017-015C-4D8D-6A5F-B03386D99D21</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sizeid" id="1495F466-02C0-D712-29D1-3CB9E65B0A92">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 20:43:45 UTC</createdTime>
+<generatorID>2800FFD5-4DC8-7F7A-0E41-0579D4F698D0</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<referedAttribute>AC71D837-C96E-A39A-91DB-3290974BCFDF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="storeid" id="497FEE43-EDDF-1472-975C-68EDE51913E0">
+<createdBy>panag</createdBy>
+<createdTime>2024-05-07 17:30:51 UTC</createdTime>
+<generatorID>F12BCC94-F8CB-0E94-F247-390097621518</generatorID>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="true"/>
+</engineerTo>
+<referedAttribute>120E1982-C419-B98B-9CDA-3A59CC0F3180</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4C75A2DC-DD28-56C8-8BA1-D40EABFDBEEE" name="car PK">
+<createdBy>panag</createdBy>
+<createdTime>2024-04-24 19:08:01 UTC</createdTime>
+<ownerDesignName>rentalcars ER</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="AE192D83-4499-E414-E432-9499602F0D0B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CAB3C6B9-2569-BC6C-A55E-91FA34A67F4C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

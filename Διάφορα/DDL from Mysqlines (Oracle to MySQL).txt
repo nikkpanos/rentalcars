@@ -1,0 +1,201 @@
+-- SQLINES DEMO *** le SQL Developer Data Modeler 23.1.0.087.0806
+-- SQLINES DEMO *** -05-15 12:11:10 EEST
+-- SQLINES DEMO *** le Database 12c
+-- SQLINES DEMO *** le Database 12c
+
+
+
+-- SQLINES DEMO *** no DDL - MDSYS.SDO_GEOMETRY
+
+-- SQLINES DEMO *** no DDL - XMLTYPE
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE car (
+    carid          INTEGER NOT NULL,
+    model          VARCHAR(50) NOT NULL,
+    cartype_typeid INTEGER NOT NULL,
+    carsize_sizeid INTEGER NOT NULL,
+    seats          INTEGER NOT NULL,
+    doors          INTEGER NOT NULL,
+    conventional   DOUBLE NOT NULL,
+    priceperday    DOUBLE NOT NULL,
+    licenseplate   VARCHAR(30),
+    store_storeid  INTEGER NOT NULL
+);
+
+ALTER TABLE car ADD CONSTRAINT car_pk PRIMARY KEY ( carid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE carsize (
+    sizeid INTEGER NOT NULL,
+    `size` VARCHAR(20) NOT NULL
+);
+
+ALTER TABLE carsize ADD CONSTRAINT carsize_pk PRIMARY KEY ( sizeid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE cartype (
+    typeid INTEGER NOT NULL,
+    type   VARCHAR(40) NOT NULL
+);
+
+ALTER TABLE cartype ADD CONSTRAINT cartype_pk PRIMARY KEY ( typeid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE customer (
+    driverlicense   VARCHAR(40) NOT NULL,
+    firstname       VARCHAR(40) NOT NULL,
+    lastname        VARCHAR(40) NOT NULL,
+    email           VARCHAR(50) NOT NULL,
+    cellphonenumber VARCHAR(20) NOT NULL,
+    homephonenumber VARCHAR(20) NOT NULL
+);
+
+ALTER TABLE customer ADD CONSTRAINT customer_pk PRIMARY KEY ( driverlicense );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE location (
+    locationid    INTEGER NOT NULL,
+    addressname   VARCHAR(100) NOT NULL,
+    addressnumber VARCHAR(10) NOT NULL,
+    postalcode    INTEGER NOT NULL,
+    store_storeid INTEGER NOT NULL
+);
+
+ALTER TABLE location ADD CONSTRAINT location_pk PRIMARY KEY ( locationid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE rent (
+    rentid                 INTEGER NOT NULL,
+    customer_driverlicense VARCHAR(40) NOT NULL,
+    car_carid              INTEGER NOT NULL,
+    location_locationid    INTEGER NOT NULL,
+    deliverydate           DATETIME NOT NULL,
+    delivered              DOUBLE NOT NULL,
+    location_locationid2   INTEGER NOT NULL,
+    returndate             DATETIME NOT NULL,
+    returned               DOUBLE NOT NULL
+);
+
+ALTER TABLE rent ADD CONSTRAINT rent_pk PRIMARY KEY ( rentid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+CREATE TABLE store (
+    storeid       INTEGER NOT NULL,
+    city          VARCHAR(40) NOT NULL,
+    addressname   VARCHAR(100) NOT NULL,
+    addressnumber VARCHAR(10) NOT NULL,
+    postalcode    INTEGER NOT NULL
+);
+
+ALTER TABLE store ADD CONSTRAINT store_pk PRIMARY KEY ( storeid );
+
+ALTER TABLE car
+    ADD CONSTRAINT car_carsize_fk FOREIGN KEY ( carsize_sizeid )
+        REFERENCES carsize ( sizeid );
+
+ALTER TABLE car
+    ADD CONSTRAINT car_cartype_fk FOREIGN KEY ( cartype_typeid )
+        REFERENCES cartype ( typeid );
+
+ALTER TABLE car
+    ADD CONSTRAINT car_store_fk FOREIGN KEY ( store_storeid )
+        REFERENCES store ( storeid );
+
+ALTER TABLE location
+    ADD CONSTRAINT location_store_fk FOREIGN KEY ( store_storeid )
+        REFERENCES store ( storeid );
+
+ALTER TABLE rent
+    ADD CONSTRAINT rent_car_fk FOREIGN KEY ( car_carid )
+        REFERENCES car ( carid );
+
+ALTER TABLE rent
+    ADD CONSTRAINT rent_customer_fk FOREIGN KEY ( customer_driverlicense )
+        REFERENCES customer ( driverlicense );
+
+ALTER TABLE rent
+    ADD CONSTRAINT rent_location_fk FOREIGN KEY ( location_locationid )
+        REFERENCES location ( locationid );
+
+ALTER TABLE rent
+    ADD CONSTRAINT rent_location_fkv2 FOREIGN KEY ( location_locationid2 )
+        REFERENCES location ( locationid );
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+DROP TRIGGER IF EXISTS fkntm_car;
+
+DELIMITER //
+
+CREATE TRIGGER fkntm_car BEFORE
+    UPDATE OF cartype_typeid, carsize_sizeid ON car
+BEGIN
+    raise_application_error(-20225, 'Non Transferable FK constraint  on table car is violated');
+END;
+//
+
+DELIMITER ;
+
+
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+DROP TRIGGER IF EXISTS fkntm_rent;
+
+DELIMITER //
+
+CREATE TRIGGER fkntm_rent BEFORE
+    UPDATE OF customer_driverlicense, car_carid ON rent
+BEGIN
+    raise_application_error(-20225, 'Non Transferable FK constraint  on table rent is violated');
+END;
+//
+
+DELIMITER ;
+
+
+
+
+
+-- SQLINES DEMO *** per Data Modeler Summary Report: 
+-- 
+-- SQLINES DEMO ***                         7
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                        15
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO *** DY                      0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         2
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***  TYPE                   0
+-- SQLINES DEMO ***  TYPE                   0
+-- SQLINES DEMO ***  TYPE BODY              0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO *** EGMENT                  0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO *** ED VIEW                 0
+-- SQLINES DEMO *** ED VIEW LOG             0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- 
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- 
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
+-- 
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO *** A                       0
+-- SQLINES DEMO *** T                       0
+-- 
+-- SQLINES DEMO ***                         0
+-- SQLINES DEMO ***                         0
