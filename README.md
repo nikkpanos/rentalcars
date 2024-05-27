@@ -1,2 +1,2 @@
 # rentalcars
-Project for a console program for a company which has stores in Athens, Thessaloniki to rent cars
+Java SE project for a console program for a (non-existent) company which has stores in Athens, Thessaloniki to rent cars to customers
